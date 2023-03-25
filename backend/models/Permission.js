@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 const permissionsSchema = new Schema({
     user: {
         type: String,
-        ref: 'user'
+        ref: 'User'
     },
     permission: {
         type: String,
@@ -11,4 +11,4 @@ const permissionsSchema = new Schema({
     },
 });
 
-module.exports = model('Permissions', permissionsSchema);
+module.exports = model('Permission', permissionsSchema);

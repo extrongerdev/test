@@ -16,8 +16,9 @@ const userSchema = new Schema({
         type: String,
         require: true,
     },
-    permissions : [{ type: Schema.Types.ObjectId, ref: 'permission' }]
-    
+    permissions : [{ type: String, ref: 'Permission' }],
+    accesses : [{ type: String, ref: 'Access' }]
+
 });
 
 module.exports = model('User', userSchema);

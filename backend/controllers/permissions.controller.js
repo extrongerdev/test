@@ -2,14 +2,6 @@ const Permission = require("../models/Permission");
 const User = require("../models/User");
 const mongoose = require('mongoose');
 
-const findAllByUserId = async (req, res) => {
-    const userId = req.params.userId;
-    const permissionsByUser = await Permission.find({user: userId});
-    if (permissionsByUser) {
-        res.json({results: permissionsByUser});
-    }
-};
-
 const associateToUserById = async (req, res) => {
     const userId = req.params.userId;
     const userFound = await User.findOne({_id: userId});
@@ -33,6 +25,5 @@ const associateToUserById = async (req, res) => {
 };
 
 module.exports = {
-    findAllByUserId,
     associateToUserById
 };
