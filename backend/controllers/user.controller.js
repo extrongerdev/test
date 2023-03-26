@@ -25,7 +25,7 @@ const deleteUser = async (req, res) => {
 }
 
 const fillAccessesAndPermissionsToUser = async (user) => {
-    user.accesses = await Access.find({user: user._id});
+    user.accesses = await Access.find({user: user._id}).sort({createdAt: -1});
     user.permissions = await Permission.find({user: user._id});
 }
 

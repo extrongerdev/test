@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19415990-6747-462e-90e6-c20028fd420c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/controllers/access.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/permissions.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/permissions.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/537fdfd6-b508-4ab2-9336-fc909c628c46.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Access.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Access.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Permission.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Permission.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/access.routes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/permissions.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/permissions.routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +36,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/diego/Desktop/USACH-2022/git-structure/extronger-dev/test&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -91,6 +87,10 @@
       <workItem from="1679704769031" duration="3360000" />
       <workItem from="1679758732792" duration="1517000" />
       <workItem from="1679772846746" duration="5578000" />
+      <workItem from="1679860773524" duration="670000" />
+      <workItem from="1679864431170" duration="60000" />
+      <workItem from="1679864503056" duration="410000" />
+      <workItem from="1679871294261" duration="1090000" />
     </task>
     <servers />
   </component>

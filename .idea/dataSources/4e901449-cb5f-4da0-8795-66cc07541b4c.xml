@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.45">
+    <root id="1">
+      <ServerVersion>6.0.5</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="admin"/>
+    <schema id="3" parent="1" name="config"/>
+    <schema id="4" parent="1" name="db_project_users"/>
+    <schema id="5" parent="1" name="local"/>
+    <table id="6" parent="4" name="accesses"/>
+    <table id="7" parent="4" name="permissions"/>
+    <table id="8" parent="4" name="users"/>
+    <column id="9" parent="6" name="_id">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="10" parent="6" name="__v">
+      <DasType>Int32|4s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="11" parent="6" name="createdAt">
+      <DasType>ISODate|91s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="12" parent="6" name="updatedAt">
+      <DasType>ISODate|91s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="13" parent="6" name="user">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="14" parent="7" name="_id">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="15" parent="7" name="__v">
+      <DasType>Int32|4s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="16" parent="7" name="permission">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="17" parent="7" name="user">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="18" parent="8" name="_id">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="19" parent="8" name="accesses">
+      <DasType>list|4999545s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="20" parent="8" name="email">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="21" parent="8" name="permissions">
+      <DasType>list|4999545s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="22" parent="8" name="__v">
+      <DasType>Int32|4s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="23" parent="8" name="name">
+      <DasType>String|12s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="24" parent="8" name="password">
+      <DasType>String|12s</DasType>
+      <Position>3</Position>
+    </column>
+  </database-model>
+</dataSource>
