@@ -11,6 +11,7 @@ const { validateJWT } = require("../middlewares/validate-jwt");
 
 const router = Router();
 
+// ruta para registrar usuario, la cual valida los campos
 router.post(
   "/register",
   [

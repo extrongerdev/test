@@ -4,10 +4,12 @@ const Access = require("../models/Access");
 const Permission = require("../models/Permission");
 const {generateJWT} = require("../helpers/jwt");
 
+//metodo para crear un usuario
 const createUser = async (req, res) => {
     try {
         const {email, password} = req.body;
         const userFound = await User.findOne({email});
+        // verificamos que el usuario no exista en la base de datos, si existe lanzamos error
         if (!userFound) {
             const userStored = new User(req.body);
 
@@ -16,6 +18,8 @@ const createUser = async (req, res) => {
             userStored.password = bcrypt.hashSync(password, salt);
 
             userStored.save();
+
+            // por default el usuario tendra un permiso que sera el VISUALIZACION_DASHBOARDS
             savePermissionDefault(userStored);
 
             res.status(201).json({
@@ -53,7 +57,10 @@ const loginUser = async (req, res) => {
                 });
             }
 
+            // guardamos el acceso cada vez que el usuario haga login
             saveAccess(userFound, res);
+            // tambien buscamos todos los permisos que el usuario tenga asignados y se loss seteamos al response
+            // el Permission.find() busca todos los permisos, pero le agregamos la condicion que me traiga todos los permisos del usuario que hizo login
             const permissions = await Permission.find({user: userFound._id});
             const token = generateJWT(userFound.id, userFound.name);
 
@@ -102,9 +109,13 @@ const saveAccess = async (user, res) => {
 
 const savePermissionDefault= async (user) => {
     try {
+        // creamos el nuevo permission
         const permission = new Permission();
+        // le agregamos el id del usuario que se acaba de registrar
         permission.user = user;
+        // setetamos su valor por default
         permission.permission = 'VISUALIZACION_DASHBOARDS';
+        //guardamos en la db
         await permission.save();
     } catch (error) {
         console.log(error);

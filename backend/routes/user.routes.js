@@ -6,8 +6,11 @@ const router = Router();
 
 router.get("/",validateJWT, listAll);
 
+// ruta para editar usuario /api/users/users-id el userId ira en el params
+// en el body ira el nombre y email
 router.put("/:userId",validateJWT, updateUser);
 
+// ruta para eliminar un usuario por id, ejemplo, /api/users/user-id-uuid
 router.delete("/:userId",validateJWT, deleteUser);
 
 module.exports = router;

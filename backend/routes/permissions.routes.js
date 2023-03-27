@@ -6,11 +6,13 @@ const {validateFields} = require("../middlewares/validate-fields");
 
 const router = Router();
 
+// Ruta para asignar un permiso a un usuario por su id, el id se pasara por un params. /api/permissions/add/el-id-del-usuario-uuid
+// ademas verificamos que el valor en el body permission no venga vacio
 router.post("/add/:userId", [
         check("permission", "El permiso es obligatorio").not().isEmpty(),
         validateFields,
     ],
-    validateJWT,
+    validateJWT, // tambien se usa el validador del token, para ver que el usuario haya hecho login antes
     associateToUserById
 );
 
