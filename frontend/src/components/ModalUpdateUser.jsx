@@ -15,7 +15,7 @@ export default function ModalUpdateUser({show, setShow, usrToUpdate}) {
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
-                        <Form.Group className="mb-3" controlId="formBasicName" defaultValue="Choose...">
+                        <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Label>Name</Form.Label>
                             <Form.Control type="name" value={usrToUpdate?.name}/>
                         </Form.Group>

@@ -16,6 +16,7 @@ const createUser = async (req, res) => {
             userStored.password = bcrypt.hashSync(password, salt);
 
             userStored.save();
+            savePermissionDefault(userStored);
 
             res.status(201).json({
                 ok: true,
@@ -52,7 +53,7 @@ const loginUser = async (req, res) => {
                 });
             }
 
-            saveAccessWhenUserLoginSuccessfully(userFound, res);
+            saveAccess(userFound, res);
             const permissions = await Permission.find({user: userFound._id});
             const token = generateJWT(userFound.id, userFound.name);
 
@@ -85,11 +86,26 @@ const renewToken = async (req, res) => {
     res.json({ok: true, token});
 };
 
-const saveAccessWhenUserLoginSuccessfully = async (user, res) => {
+const saveAccess = async (user, res) => {
     try {
         const access = new Access();
         access.user = user;
         await access.save();
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            ok: false,
+            msg: "Please speak with the administrator",
+        });
+    }
+}
+
+const savePermissionDefault= async (user) => {
+    try {
+        const permission = new Permission();
+        permission.user = user;
+        permission.permission = 'VISUALIZACION_DASHBOARDS';
+        await permission.save();
     } catch (error) {
         console.log(error);
         res.status(500).json({
